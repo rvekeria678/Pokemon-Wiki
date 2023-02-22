@@ -1,0 +1,24 @@
+{
+  "name": "pokemon-wiki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rvekeria678/Pokemon-Wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rvekeria678/Pokemon-Wiki/issues"
+  },
+  "homepage": "https://github.com/rvekeria678/Pokemon-Wiki#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
