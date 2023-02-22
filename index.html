@@ -6,17 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Wiki</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
+
+
     <link rel="icon" type="image-x-icon" href="./src/assets/images/favicon.ico" />
     <link href='./dist/output.css' rel="stylesheet" />
 </head>
 
-<body>
-    <h1 class="text-6xl">Pokémon</h1>
-    <p class="sm:w-1/2 mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus cupiditate dicta
-        temporibus
-        architecto sequi
-        harum incidunt ut nam facilis quos atque fugiat laboriosam itaque, sit commodi aspernatur, a fugit quibusdam?
-    </p>
+<body class="font-Inter bg-gradient from-red-100 to-red-400 bg-gradient-to-b w-screen h-screen">
+    <nav class="flex p-6 shadow-lg bg-white">
+        <img src="./src/assets/images/icon.png" class="h-8 mr-2" />
+        <h1 class="text-xl font-semibold">Pokémon Wiki</h1>
+    </nav>
+    <div class="w-full md:w-1/2 md:mx-auto h-auto bg-white mt-1 md:mt-3 p-5">
+        <h1>Welcome to Pokémon Wiki, a place where you can learn more about the world and the species that roam it.
+            There over a thousand different kinds of Pokémon species each unique in their own way. Simply search the
+            name of a particular Pokémon speicies and learn about its stats so that you may build a well rounded team.
+        </h1>
+        <div class="mt-8 grid grid-cols-5">
+            <input id="pname-input" class=" p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
+                placeholder="Pokemon Species" />
+            <button class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300">Search</button>
+        </div>
+    </div>
 </body>
 
 </html>
