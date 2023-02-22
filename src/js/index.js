@@ -20,6 +20,7 @@ nav__logo.addEventListener('click', (event) => {
 search__button.addEventListener('click', (event) => {
     home__content.style.display = 'none';
     pokemon__content.style.removeProperty('display');
+    displayHandler__clean();
 
     fetch(url + pokemon__input.value.toLowerCase()).then((response) => {
         console.log('resolved', response);
@@ -38,15 +39,28 @@ search__button.addEventListener('click', (event) => {
 });
 const displayHandler = function (data) {
     console.log(data);
-
     // Data Retrieval
     pokemon__species.innerText = data.species.name;
+    //const types = [];
+    for (let i = 0; i < data.types.length; i++) {
+        const type_label = document.createElement('h1');
+        const type_name = data.types[i].type.name;
+        type_label.innerText = type_name;
+        type_label.className = 'm-2 p-2 border rounded-xl text-xl text-white';
+        type_bg = 'bg-' + type_name;
+        type_label.classList.add(type_bg);
+        pokemon__type.append(type_label);
+    }
 
     pokemon__image.setAttribute('src', data.sprites.front_default);
     // Data Styling
 }
 const displayHandler__err = function () {
     pokemon__species.innerText = "Sorry, we could not find that Pokémon";
-    pokemon__type.innerText = '';
     pokemon__image.setAttribute('src', './src/assets/images/sad-pokemon.png');
+}
+const displayHandler__clean = function () {
+    pokemon__species.innerText = '';
+    pokemon__type.innerText = '';
+    pokemon__image.removeAttribute('src');
 }

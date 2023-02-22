@@ -3,7 +3,27 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ['./index.html', './src/**/*.{html, js}'],
+  content: ['./index.html', './src/js/index.js'],
+  safeList: [
+    'bg-normal',
+    'bg-fire',
+    'bg-water',
+    'bg-grass',
+    'bg-electric',
+    'bg-ice',
+    'bg-fighting',
+    'bg-poison',
+    'bg-ground',
+    'bg-flying',
+    'bg-psychic',
+    'bg-bug',
+    'bg-rock',
+    'bg-ghost',
+    'bg-dark',
+    'bg-dragon',
+    'bg-steel',
+    'bg-fairy'
+  ],
   theme: {
     extend: {
       colors: {
