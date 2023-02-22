@@ -6,44 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Wiki</title>
-
+    <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!--STYLING-->
     <link rel="icon" type="image-x-icon" href="./src/assets/images/favicon.ico" />
     <link href='./dist/output.css' rel="stylesheet" />
 </head>
 
-<body class="font-Inter bg-gradient from-red-100 to-red-400 bg-gradient-to-b w-screen h-screen">
+<body class="font-Inter bg-gradient from-red-100 to-red-400 bg-gradient-to-b w-screen h-screen relative">
     <nav class="flex p-6 shadow-lg bg-white">
         <span id="nav--logo" class="flex cursor-pointer">
             <img src="./src/assets/images/icon.png" class="h-8 mr-2" />
             <h1 class="text-xl font-semibold">Pokémon Wiki</h1>
         </span>
     </nav>
-    <div class="w-full md:w-1/2 md:mx-auto h-auto bg-white mt-1 md:mt-3 p-5">
+    <div class="w-full md:w-2/3 md:mx-auto h-auto bg-white mt-1 md:mt-3 p-5 md:rounded-2xl">
+        <!--HOMEPAGE CONTENT-->
         <div id="home--content">
             <img class="h-[300px] mx-auto" src="./src/assets/images/samurott.png" />
-            <h1>Welcome to <span class="font-semibold">Pokémon Wiki</span>, a place where you can learn more about the
-                world
-                and the species that roam it.
+            <h1 class="mx-auto lg:w-2/3">Welcome to <span class="font-semibold">Pokémon Wiki</span>, a place where you
+                can learn
+                more about the
+                world and the species that roam it.
                 There over a thousand different kinds of Pokémon species each unique in their own way. Simply search the
                 name of a particular Pokémon speicies and learn about its stats so that you may build a well rounded
                 team.
             </h1>
         </div>
-        <div id="pokemon--content" class="text-center">Some Pokemon Content</div>
-        <div class="mt-8 grid grid-cols-5">
+        <!--POKEMON CONTENT-->
+        <div id="pokemon--content" class="text-center">
+            <h1 class="text-5xl font-Phudu font-light tracking-wider" id="pokemon--species"></h1>
+            <div id="pokemon--type"></div>
+            <img class="h-[300px] mx-auto" id="pokemon--image" />
+        </div>
+        <!--CONSOLE CONTENT-->
+        <div class="mt-8 grid grid-cols-5 lg:w-2/3 mx-auto">
             <input id="pname-input" class=" p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
                 placeholder="Pokemon Species" />
             <button id="search--btn"
                 class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
         </div>
     </div>
+    <footer class="bg-slate-300 absolute bottom-0 right-0 left-0 text-end"><small>Copyright 2023, All Rights
+            Reserved</small>
+    </footer>
     <script src="./src/js/index.js"></script>
 </body>
 
