@@ -13,6 +13,10 @@ const pokemon__stats = document.querySelector("#pokemon--stats");
 const pokemon__next = document.querySelector("#next--btn");
 const pokemon__prev = document.querySelector("#prev--btn");
 const pokemon__rand = document.querySelector("#rand--btn");
+pokemon__next.style.display = 'none';
+pokemon__prev.style.display = 'none';
+
+const POKEMON_TOTAL = 1008;
 
 // Initial page DOM element styles
 pokemon__content.style.display = 'none';
@@ -22,6 +26,8 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 nav__logo.addEventListener('click', (event) => {
     home__content.style.removeProperty('display');
     pokemon__content.style.display = 'none';
+    pokemon__next.style.display = 'none';
+    pokemon__prev.style.display = 'none';
 });
 // Enter Key Handling
 pokemon__input.addEventListener('keydown', (event) => {
@@ -29,7 +35,23 @@ pokemon__input.addEventListener('keydown', (event) => {
         search__button.click();
     }
 });
+// Highlights textfield when clicked upon
+pokemon__input.addEventListener('click', (event) => {
+    pokemon__input.select();
+});
+// Random Pokemon Handling
+pokemon__rand.addEventListener('click', (event) => {
+    pokemon__input.value = Math.floor(Math.random() * POKEMON_TOTAL) + 1;
+    search__button.click();
+});
+// Next Pokemon Handling
+pokemon__next.addEventListener('click', (event) => {
 
+});
+// Previous Pokemon Handling
+pokemon__prev.addEventListener('click', (event) => {
+
+});
 search__button.addEventListener('click', (event) => {
     home__content.style.display = 'none';
     pokemon__content.style.removeProperty('display');
@@ -59,6 +81,8 @@ search__button.addEventListener('click', (event) => {
 });
 const displayHandler = function (data) {
     console.log(data);
+    pokemon__next.style.removeProperty('display');
+    pokemon__prev.style.removeProperty('display');
     if (data.id == 1) {
         pokemon__prev.disabled = true;
         pokemon__prev.style.opacity = '40%';
@@ -66,7 +90,7 @@ const displayHandler = function (data) {
         pokemon__prev.disabled = false;
         pokemon__prev.style.opacity = '100%';
     }
-    if (data.id == 1008) {
+    if (data.id == POKEMON_TOTAL) {
         pokemon__next.disabled = true;
         pokemon__next.style.opacity = '40%';
     } else {

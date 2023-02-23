@@ -20,13 +20,13 @@
 </head>
 
 <body class="font-Inter bg-gradient from-red-100 to-red-400 bg-gradient-to-b w-screen h-screen relative">
-    <nav class="flex p-6 shadow-lg bg-white">
+    <nav class="sticky top-0 z-50 flex p-6 shadow-lg bg-white">
         <span id="nav--logo" class="flex cursor-pointer">
             <img src="./src/assets/images/icon.png" class="h-8 mr-2" />
             <h1 class="text-xl font-semibold">Pokémon Wiki</h1>
         </span>
     </nav>
-    <div class="w-full md:w-2/3 md:mx-auto h-auto bg-white mt-2 md:mt-3 p-5 md:rounded-2xl mb-14">
+    <div class="w-full md:w-2/3 md:mx-auto h-auto bg-white mt-2 md:mt-3 p-5 pb-20 sm:pb-0 md:rounded-t-2xl">
         <!--HOMEPAGE CONTENT-->
         <div id="home--content">
             <img class="h-[300px] mx-auto" src="./src/assets/images/samurott.png" />
@@ -52,6 +52,7 @@
             <ul id="pokemon--stats" class="font-semibold text-lg m-2 font-Phudu mx-auto md:w-2/5 w-3/4"></ul>
         </div>
         <!--CONSOLE CONTENT-->
+        <!--
         <div class="mt-8 grid grid-cols-5 lg:w-2/3 mx-auto">
             <input id="pname-input" class="p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
                 placeholder="Pokemon Species or ID" />
@@ -63,7 +64,23 @@
             <button id="next--btn" class="border-2 rounded-xl p-2 my-3 bg-indigo-600 text-white">Next</button>
         </div>
         <button id="rand--btn"
-            class="border-2 rounded-xl p-2 w-full my-1 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
+            class="border-2 rounded-xl p-2 w-full my-3 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
+            Pokémon</button>-->
+    </div>
+    <div
+        class="w-full md:w-2/3 mx-auto bg-white sm:relative sm:bottom-auto sticky bottom-0 p-5 md:rounded-b-2xl border-t-2 sm:border-none">
+        <div class="grid grid-cols-5 lg:w-2/3 mx-auto">
+            <input id="pname-input" class="p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
+                placeholder="Pokemon Species or ID" />
+            <button id="search--btn"
+                class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
+        </div>
+        <div id="prev-next" class="grid grid-cols-2 gap-3">
+            <button id="prev--btn" class="border-2 rounded-xl p-2 my-3 bg-red-600 text-white">Previous</button>
+            <button id="next--btn" class="border-2 rounded-xl p-2 my-3 bg-indigo-600 text-white">Next</button>
+        </div>
+        <button id="rand--btn"
+            class="border-2 rounded-xl p-2 w-full my-3 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
             Pokémon</button>
     </div>
     <div
