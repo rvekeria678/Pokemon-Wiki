@@ -15,7 +15,7 @@ const pokemon__prev = document.querySelector("#prev--btn");
 const pokemon__rand = document.querySelector("#rand--btn");
 pokemon__next.style.display = 'none';
 pokemon__prev.style.display = 'none';
-
+let current_id = null;
 const POKEMON_TOTAL = 1008;
 
 // Initial page DOM element styles
@@ -46,11 +46,13 @@ pokemon__rand.addEventListener('click', (event) => {
 });
 // Next Pokemon Handling
 pokemon__next.addEventListener('click', (event) => {
-
+    pokemon__input.value = ++current_id;
+    search__button.click();
 });
 // Previous Pokemon Handling
 pokemon__prev.addEventListener('click', (event) => {
-
+    pokemon__input.value = --current_id;
+    search__button.click();
 });
 search__button.addEventListener('click', (event) => {
     home__content.style.display = 'none';
@@ -97,6 +99,7 @@ const displayHandler = function (data) {
         pokemon__next.disabled = false;
         pokemon__next.style.opacity = '100%';
     }
+    current_id = data.id;
     // Data Retrieval
     // Pokemon Name
     pokemon__species.innerText = data.species.name + ' #' + data.id;
