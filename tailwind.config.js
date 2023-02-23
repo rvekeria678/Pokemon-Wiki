@@ -22,7 +22,7 @@ module.exports = {
     'bg-dark',
     'bg-dragon',
     'bg-steel',
-    'bg-fairy'
+    'bg-fairy',
   ],
   theme: {
     extend: {

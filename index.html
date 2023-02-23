@@ -40,10 +40,14 @@
             </h1>
         </div>
         <!--POKEMON CONTENT-->
-        <div id="pokemon--content" class="text-center">
+        <div id="pokemon--content" class="text-center relative">
             <h1 class="text-5xl font-Phudu font-light tracking-wider" id="pokemon--species"></h1>
             <div class="flex justify-center" id="pokemon--type"></div>
             <img class="h-[300px] mx-auto" id="pokemon--image" />
+            <div class="flex justify-center">
+                <h3 id="pokemon--height" class="mx-3 font-semibold font-Phudu"></h3>
+                <h3 id="pokemon--weight" class="mx-3 font-semibold font-Phudu"></h3>
+            </div>
         </div>
         <!--CONSOLE CONTENT-->
         <div class="mt-8 grid grid-cols-5 lg:w-2/3 mx-auto">
@@ -52,6 +56,9 @@
             <button id="search--btn"
                 class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
         </div>
+    </div>
+    <div
+        class="bg-normal bg-fire bg-grass bg-electric bg-ice bg-fighting bg-poison bg-ground bg-flying bg-psychic bg-bug bg-rock bg-ghost bg-dark bg-dragon bg-steel bg-fairy bg-water">
     </div>
     <footer class="bg-slate-300 absolute bottom-0 right-0 left-0 text-end"><small>Copyright 2023, All Rights
             Reserved</small>
