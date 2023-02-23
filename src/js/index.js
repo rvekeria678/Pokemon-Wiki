@@ -10,6 +10,9 @@ const pokemon__height = document.querySelector("#pokemon--height");
 const pokemon__weight = document.querySelector("#pokemon--weight");
 const pokemon__stats__header = document.querySelector("#pokemon--stats-header");
 const pokemon__stats = document.querySelector("#pokemon--stats");
+const pokemon__next = document.querySelector("#next--btn");
+const pokemon__prev = document.querySelector("#prev--btn");
+const pokemon__rand = document.querySelector("#rand--btn");
 
 // Initial page DOM element styles
 pokemon__content.style.display = 'none';
@@ -34,12 +37,9 @@ search__button.addEventListener('click', (event) => {
     // Loading Animation
     const load__outter = document.createElement('div');
     const load__inner = document.createElement('div');
-
     load__outter.className = 'animate-spin flex items-center justify-center mx-auto my-auto rounded-full w-14 h-14 bg-gradient-to-tr from-purple-700 to-red-500 absolute inset-0'
     load__inner.className = 'h-9 w-9 rounded-full bg-white';
-
     load__outter.append(load__inner);
-
     pokemon__type.parentNode.insertBefore(load__outter, pokemon__type.nextSibling);
 
     fetch(url + pokemon__input.value.toLowerCase()).then((response) => {
@@ -55,11 +55,24 @@ search__button.addEventListener('click', (event) => {
     }).catch((err) => {
         console.log('Network Error:', err);
     });
-
-    //pokemon__input.select();
+    // pokemon__input.select();
 });
 const displayHandler = function (data) {
     console.log(data);
+    if (data.id == 1) {
+        pokemon__prev.disabled = true;
+        pokemon__prev.style.opacity = '40%';
+    } else {
+        pokemon__prev.disabled = false;
+        pokemon__prev.style.opacity = '100%';
+    }
+    if (data.id == 1008) {
+        pokemon__next.disabled = true;
+        pokemon__next.style.opacity = '40%';
+    } else {
+        pokemon__next.disabled = false;
+        pokemon__next.style.opacity = '100%';
+    }
     // Data Retrieval
     // Pokemon Name
     pokemon__species.innerText = data.species.name + ' #' + data.id;
