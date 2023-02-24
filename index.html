@@ -19,18 +19,19 @@
     <link href='./dist/output.css' rel="stylesheet" />
 </head>
 
-<body class="font-Inter bg-gradient from-red-100 to-red-400 bg-gradient-to-b w-screen h-screen relative">
+<body class="font-Inter bg-cover bg-red-400 w-screen h-screen min-full relative overflow-scroll">
     <nav class="sticky top-0 z-50 flex p-6 shadow-lg bg-white">
         <span id="nav--logo" class="flex cursor-pointer">
             <img src="./src/assets/images/icon.png" class="h-8 mr-2" />
             <h1 class="text-xl font-semibold">Pokémon Wiki</h1>
         </span>
     </nav>
-    <div class="w-full md:w-2/3 md:mx-auto h-auto bg-white mt-2 md:mt-3 p-5 pb-20 sm:pb-0 md:rounded-t-2xl">
-        <!--HOMEPAGE CONTENT-->
-        <div id="home--content">
+    <div class="w-full sm:w-2/3 lg:w-3/5 mx-auto bg-white sm:rounded-2xl sm:mt-3 relative sm:p-5">
+        <div id="home--container">
             <img class="h-[300px] mx-auto" src="./src/assets/images/samurott.png" />
-            <h1 class="mx-auto lg:w-2/3">Welcome to <span class="font-semibold">Pokémon Wiki</span>, a place where you
+            <h1 class="lg:w-2/3 p-7 pb-12 mx-auto">Welcome to <span class="font-semibold">Pokémon Wiki</span>, a place
+                where
+                you
                 can learn
                 more about the
                 world and the species that roam it.
@@ -39,49 +40,35 @@
                 team.
             </h1>
         </div>
-        <!--POKEMON CONTENT-->
-        <div id="pokemon--content" class="text-center relative">
-            <h1 class="text-5xl font-Phudu font-normal tracking-wider" id="pokemon--species"></h1>
-            <div class="flex justify-center" id="pokemon--type"></div>
-            <img class="h-[300px] mx-auto" id="pokemon--image" />
-            <div class="flex justify-center">
-                <h3 id="pokemon--height" class="mx-3 font-semibold font-Phudu"></h3>
-                <h3 id="pokemon--weight" class="mx-3 font-semibold font-Phudu"></h3>
+        <div id="pokemon--container">
+            <div id="pokemon--content" class="text-center relative pb-2">
+                <h1 class="text-5xl font-Phudu font-normal tracking-wider" id="pokemon--species"></h1>
+                <div class="flex justify-center" id="pokemon--type"></div>
+                <img class="h-[300px] mx-auto" id="pokemon--image" />
+                <div class="flex justify-center">
+                    <h3 id="pokemon--height" class="mx-3 font-semibold font-Phudu"></h3>
+                    <h3 id="pokemon--weight" class="mx-3 font-semibold font-Phudu"></h3>
+                </div>
+                <h3 id="pokemon--stats-header" class=" m-2 font-semibold text-lg font-Phudu">Statistics</h3>
+                <ul id="pokemon--stats" class="font-semibold text-lg m-2 font-Phudu mx-auto md:w-2/5 w-3/4"></ul>
             </div>
-            <h3 id="pokemon--stats-header" class=" m-2 font-semibold text-lg font-Phudu">Statistics</h3>
-            <ul id="pokemon--stats" class="font-semibold text-lg m-2 font-Phudu mx-auto md:w-2/5 w-3/4"></ul>
         </div>
-        <!--CONSOLE CONTENT-->
-        <!--
-        <div class="mt-8 grid grid-cols-5 lg:w-2/3 mx-auto">
-            <input id="pname-input" class="p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
-                placeholder="Pokemon Species or ID" />
-            <button id="search--btn"
-                class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
+        <div id="console--container"
+            class="sticky sm:relative bottom-0 sm:bottom-auto border-t-2 sm:border-0 p-5 w-full bg-white lg:w-2/3 mx-auto">
+            <div class="grid grid-cols-5 w-full mx-auto">
+                <input id="pname-input" class="p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4"
+                    type="text" placeholder="Pokemon Species or ID" />
+                <button id="search--btn"
+                    class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
+            </div>
+            <div id="prev-next" class="grid grid-cols-2 gap-3">
+                <button id="prev--btn" class="border-2 rounded-xl p-2 my-3 bg-red-600 text-white">Previous</button>
+                <button id="next--btn" class="border-2 rounded-xl p-2 my-3 bg-indigo-600 text-white">Next</button>
+            </div>
+            <button id="rand--btn"
+                class="border-2 rounded-xl p-2 w-full my-3 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
+                Pokémon</button>
         </div>
-        <div id="prev-next" class="grid grid-cols-2 gap-3">
-            <button id="prev--btn" class="border-2 rounded-xl p-2 my-3 bg-red-600 text-white">Previous</button>
-            <button id="next--btn" class="border-2 rounded-xl p-2 my-3 bg-indigo-600 text-white">Next</button>
-        </div>
-        <button id="rand--btn"
-            class="border-2 rounded-xl p-2 w-full my-3 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
-            Pokémon</button>-->
-    </div>
-    <div
-        class="w-full md:w-2/3 mx-auto bg-white sm:relative sm:bottom-auto sticky bottom-0 p-5 md:rounded-b-2xl border-t-2 sm:border-none">
-        <div class="grid grid-cols-5 lg:w-2/3 mx-auto">
-            <input id="pname-input" class="p-2 border-2 outline-none rounded-l-xl col-span-3 md:col-span-4" type="text"
-                placeholder="Pokemon Species or ID" />
-            <button id="search--btn"
-                class="border-2 rounded-r-xl p-2 col-span-2 md:col-span-1 bg-green-300 text-center">Search</button>
-        </div>
-        <div id="prev-next" class="grid grid-cols-2 gap-3">
-            <button id="prev--btn" class="border-2 rounded-xl p-2 my-3 bg-red-600 text-white">Previous</button>
-            <button id="next--btn" class="border-2 rounded-xl p-2 my-3 bg-indigo-600 text-white">Next</button>
-        </div>
-        <button id="rand--btn"
-            class="border-2 rounded-xl p-2 w-full my-3 bg-gradient-to-r from-indigo-600 to-red-600 text-white">Random
-            Pokémon</button>
     </div>
     <div
         class="bg-normal bg-fire bg-grass bg-electric bg-ice bg-fighting bg-poison bg-ground bg-flying bg-psychic bg-bug bg-rock bg-ghost bg-dark bg-dragon bg-steel bg-fairy bg-water">
